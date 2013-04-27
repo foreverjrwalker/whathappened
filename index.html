@@ -7,7 +7,7 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-		<title>index</title>
+		<title>What's Happening </title>
 		<meta name="description" content="" />
 		<meta name="author" content="Michael" />
 
@@ -16,23 +16,52 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<h1> What's Happening!</h1>
 	</head>
 
-  <body>
-    {% for greeting in greetings %}
-      {% if greeting.author %}
-        <b>{{ greeting.author.nickname }}</b> wrote:
-      {% else %}
-        An anonymous person wrote:
-      {% endif %}
-      <blockquote>{{ greeting.content|escape }}</blockquote>
-    {% endfor %}
+	<body>
+		<!-- {% for greeting in greetings %}
+		{% if greeting.author %}
+		<b>{{ greeting.author.nickname }}</b> wrote:
+		{% else %}
+		An anonymous person wrote:
+		{% endif %}
+		<blockquote>{{ greeting.content|escape }}</blockquote>
+		{% endfor %} -->
 
-    <form action="/sign" method="post">
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-      <div><input type="submit" value="Sign Guestbook"></div>
-    </form>
-
-    <a href="{{ url }}">{{ url_linktext }}</a>
-  </body>
+		<h2> Reddit Integration </h2>
+		<form name="input" action="/reddit" method="post">
+			Query:
+			<input type="text" name="Query">
+			<input type="submit" value="Submit">
+		</form>
+		<h2> Wikipedia Search Integration </h2>
+		<form name="input" action="/wiki" method="post">
+			Query:
+			<input type="text" name="query">
+			Date:
+			<input type="date" name="searchdate">
+			<input type="submit" value="Submit">
+		</form>
+		<h2> Bing Search Integration </h2>
+		<form name="input" action="/bing" method="post">
+			Query:
+			<input type="text" name="query">
+			Date:
+			<input type="date" name="searchdate">
+			<input type="submit" value="Submit">
+		</form>
+		<h2> Google Search Integraton </h2>
+		<form name="input" action="/google" method="post">
+			Query:
+			<input type="text" name="query">
+			Date:
+			<input type="date" name="searchdate">
+			<input type="submit" value="Submit">
+		</form>
+		<h2> Google Calendar Integration </h2>
+		<div id=calendar_link>
+			<a href="/calendar" >view calendar</a>
+		</div>
+	</body>
 </html>

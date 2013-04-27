@@ -1,5 +1,9 @@
 import REST_wiki
+import json
 
 
 
-REST_wiki.printhello()
+BING_BASE = 'https://api.datamarket.azure.com/Bing/Search/v1/News'
+
+def SearchWithQuery(query):
+    print "blah"
