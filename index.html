@@ -33,6 +33,7 @@
 		<form name="input" action="/reddit" method="post">
 			Query:
 			<input type="text" name="Query">
+			<input type="date" name="date">
 			<input type="submit" value="Submit">
 		</form>
 		<h2> Wikipedia Search Integration </h2>
@@ -40,7 +41,7 @@
 			Query:
 			<input type="text" name="query">
 			Date:
-			<input type="date" name="searchdate">
+			<input type="date" name="date">
 			<input type="submit" value="Submit">
 		</form>
 		<h2> Bing Search Integration </h2>
@@ -48,7 +49,7 @@
 			Query:
 			<input type="text" name="query">
 			Date:
-			<input type="date" name="searchdate">
+			<input type="date" name="date">
 			<input type="submit" value="Submit">
 		</form>
 		<h2> Google Search Integraton </h2>
@@ -56,12 +57,26 @@
 			Query:
 			<input type="text" name="query">
 			Date:
-			<input type="date" name="searchdate">
+			<input type="date" name="date">
 			<input type="submit" value="Submit">
 		</form>
-		<h2> Google Calendar Integration </h2>
+		<h2> Calendar View </h2>
 		<div id=calendar_link>
-			<a href="/calendar" >view calendar</a>
+			<a href="/calendar.html" >view calendar</a>
 		</div>
+		<h2> GET Test </h2>
+		<form name="test" action="/test" method="get">
+            Query:
+            <input type="text" name="query">
+            Date:
+            <input type="submit" value="Submit">
+        </form>
+        <h2> POST Test </h2>
+        <form name="test" action="/test" method="post">
+            Query:
+            <input type="text" name="query">
+            Date:
+            <input type="submit" value="Submit">
+        </form>
 	</body>
 </html>

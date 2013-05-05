@@ -1,9 +1,9 @@
 import REST_wiki
-import json
+import urllib2
+import urllib
 
+BING_BASE = 'https://api.datamarket.azure.com/Bing/Search/v1/RelatedSearch?Query='
 
-
-BING_BASE = 'https://api.datamarket.azure.com/Bing/Search/v1/News'
-
-def SearchWithQuery(query):
-    print "blah"
+def getRelatedSearchWords(query):
+    "Authorization: Basic " . base64_encode($accountKey . ":" . $accountKey
+    print urllib.urlencode(BING_BASE + query)

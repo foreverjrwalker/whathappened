@@ -49,26 +49,39 @@ class RedditHandler(webapp2.RequestHandler):
     def post(self):
         self.response.write('Hello Post!')
         
-class CalendarHandler(webapp2.RequestHandler):
-    # Handle HTTP GET    
-    def get(self):
-        self.response.write('Hello Calendar GET!')
-    def post(self):
-        self.response.write('Hello Post!')
-        
 class WikiHandler(webapp2.RequestHandler):
     # Handle HTTP GET    
     print "Made it here"
     def post(self):
         query = self.request.get('query')
-        result = REST_wiki.getArticleAbout(query)
-        self.response.write(result)
-        self.response.write(query)        
+        date = self.request.get('date')
+        date = common.splitDate(date)
+        year = date[0]
+        month = date[1]
+#        result = REST_wiki.getArticleAbout(query, month, year)
+#        self.response.write(result)
+        self.response.write(query)  
+        self.response.write("<br>")      
+        self.response.write(year)
+        self.response.write("<br>")      
+        self.response.write(month)
+        
+class TestHandler(webapp2.RequestHandler):
+    # Handle HTTP GET    
+    print "Made it here"
+    def get(self):
+        
+        self.response.write(common.GET(self.request.get('query')))
+    def post(self):
+        args = {'query' : ''}
+        self.response.write(common.POST("http://google.com", args))
+                
+        
         
 app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/reddit', RedditHandler),
                                ('/google', GoogleHandler),
                                ('/bing', BingHandler),
-                               ('/calendar', CalendarHandler),
-                               ('/wiki', WikiHandler)
+                               ('/wiki', WikiHandler),
+                               ('/test', TestHandler)
                                ], debug=True)
