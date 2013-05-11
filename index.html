@@ -16,67 +16,29 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<h1> What's Happening!</h1>
+		<h1> What Happened?</h1>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+		
+		</script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script>
+			$(function() {
+				$("#datepicker").datepicker();
+			});
+		</script>
 	</head>
-
 	<body>
-		<!-- {% for greeting in greetings %}
-		{% if greeting.author %}
-		<b>{{ greeting.author.nickname }}</b> wrote:
-		{% else %}
-		An anonymous person wrote:
-		{% endif %}
-		<blockquote>{{ greeting.content|escape }}</blockquote>
-		{% endfor %} -->
 
-		<h2> Reddit Integration </h2>
-		<form name="input" action="/reddit" method="post">
-			Query:
-			<input type="text" name="Query">
-			<input type="date" name="date">
-			<input type="submit" value="Submit">
-		</form>
-		<h2> Wikipedia Search Integration </h2>
-		<form name="input" action="/wiki" method="post">
-			Query:
-			<input type="text" name="query">
-			Date:
-			<input type="date" name="date">
-			<input type="submit" value="Submit">
-		</form>
-		<h2> Bing Search Integration </h2>
-		<form name="input" action="/bing" method="post">
-			Query:
-			<input type="text" name="query">
-			Date:
-			<input type="date" name="date">
-			<input type="submit" value="Submit">
-		</form>
-		<h2> Google Search Integraton </h2>
-		<form name="input" action="/google" method="post">
-			Query:
-			<input type="text" name="query">
-			Date:
-			<input type="date" name="date">
-			<input type="submit" value="Submit">
-		</form>
-		<h2> Calendar View </h2>
-		<div id=calendar_link>
-			<a href="/calendar.html" >view calendar</a>
-		</div>
-		<h2> GET Test </h2>
-		<form name="test" action="/test" method="get">
-            Query:
-            <input type="text" name="query">
-            Date:
-            <input type="submit" value="Submit">
-        </form>
-        <h2> POST Test </h2>
-        <form name="test" action="/test" method="post">
-            Query:
-            <input type="text" name="query">
-            Date:
-            <input type="submit" value="Submit">
-        </form>
+		<p>
+			<form name="input" action="/wh" method="post">
+				Query:
+				<input type="text" name="query" value="Y2K">
+				<br>
+				Date: <input type="date" id="picker" name="date" value="1999-09-09" >
+				<br>
+				PDF: <input type="checkbox" name= "pdf">
+				<input type="submit" value="Find Out!">
+			</form>
+		</p>
 	</body>
 </html>
